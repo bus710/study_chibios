@@ -3,7 +3,8 @@ This repo shares my experience in using ChibiOS for personal projects.
 본 리포지토리는 ChibiOS를 개인 프로젝트를 적용하며 겪은 내용을 공유 합니다.  
   
 Since I am not an RTOS expert, the contents can be wrong. Also it won't be written in English for now.  
-제가 RTOS 전문가가 아니기 때문에 내용에 오류가 있을 수 있습니다. 또한 당분간은 영어가 아닌 한글로 내용을 작성하고자 합니다.  
+제가 RTOS 전문가가 아니기 때문에 내용에 오류가 있을 수 있습니다.   
+또한 당분간은 영어가 아닌 한글로 내용을 작성하고자 합니다.  
   
 ### Why - 왜 ChibiOS를 쓰게 되었나?  
 관심 있는 분은 없으시겠지만, 저는 현재 작은 프로젝트를 진행 중에 있습니다. 파워 휠체어 프로젝트는 지역 로봇 커뮤니티에서 만난 다른 개발자들과 진행 되고 있으며, 그 중 한 명의 가족에게 제공할 전동 휠체어를 개발하는 것이 목적 입니다. ([관련 링크](https://github.com/robomakery/pvc-powerchair)) 
