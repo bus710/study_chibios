@@ -15,7 +15,7 @@ Since I am not an RTOS expert, the contents can be wrong. Also it won't be writt
 ### How/What - 어떻게 무엇을 개발하고 공유할까?  
 일단은 ChibiOS를 입수하고, 컴파일 및 퓨징하는 것부터 시작하고자 합니다. 다음은 기본적인 입출력과 쓰레드를 사용하기 위한 API들을 살펴 본 후, 프로젝트와 관련된 내용을 통해 점차 수준을 높여가보고자 합니다. 프로젝트의 수준이 높아지면, 프로파일링과 함께 상위 소프트웨어와 연동하는 것도 알아 봐야겠습니다.  
 
-- ChibiOS & ChibiStudio ....... ([>>>](README_01.md))
+- ChibiOS & ChibiStudio \t ([>>>](README_01.md))
 - 컴파일과 다운로드     ....... (TBD)
 - 기본 사용법           ....... (TBD)
 - 하드웨어 프로젝트와 응용 .... (TBD)
