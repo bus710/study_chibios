@@ -26,11 +26,12 @@ Since I am not an RTOS expert, the contents can be wrong. Also it won't be writt
 ### Requirement - 준비물들
 - 먼저 적절한 사양의 PC가 필요 합니다. 저는 윈도우즈 10를 사용하고 있습니다.   
 - ChibiOS는 ST의 마이크로 콘트롤러인 STM32F4xxx을 기반으로하는 평가 보드인 STM32F4-Discovery를 기반으로 합니다. 해당 제품은 대략 $20 정도의 비교적 저렴한 가격에 마이크로 콘트롤러, 기본 주변 장치 (전원, 발진 회로, 입출력), 퓨징을 위한 stlink v2를 제공함으로써 빠르고 간편한 시작을 위한 환경을 제공 합니다.   
+- FTDI 모듈은 Discovery 평가 보드와 PC를 연결하여 통신을 주고 받기 위해 사용 합니다. 보드 측과 3.3V로 통신하므로, 스펙을 반드시 확인해야 합니다. 
 - DC 파워 서플라이, 오실로 스코프, 테스터, 납땜 기구도 필요 합니다.  
 - 관련 소프트웨어는 추후에 다루도록 하겠습니다.  
   
 ### Maintainer - 관리자
-[김성준](http://bus710.net) <<bus710@gmail.com>>  
+김성준 - [bus710.net](http://bus710.net) <<bus710@gmail.com>>  
 
   
 
