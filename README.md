@@ -2,7 +2,7 @@
 This repo shares my experience in using ChibiOS for personal projects.  
 본 리포지토리는 ChibiOS를 개인 프로젝트를 적용하며 겪은 내용을 공유 합니다.  
   
-Since I am not a RTOS expert, the contents can be wrong. Also it won't be written in English for now.  
+Since I am not an RTOS expert, the contents can be wrong. Also it won't be written in English for now.  
 제가 RTOS 전문가가 아니기 때문에 내용에 오류가 있을 수 있습니다. 또한 당분간은 영어가 아닌 한글로 내용을 작성하고자 합니다.  
   
 ## Why - 왜 ChibiOS를 쓰게 되었나?  
@@ -12,4 +12,13 @@ Since I am not a RTOS expert, the contents can be wrong. Also it won't be writte
 결론적으로, ChibiOS는 기초적인 로봇 하드웨어를 제어함에 있어서 내부적으로는 효율적인 멀티 쓰레드와 API를 제공하고, 외부적으로는 다양한 신호의 입출력을 제공하므로, 채용하게 되었습니다.  
   
 ## How/What - 어떻게 무엇을 개발하고 공유할까?  
+일단은 ChibiOS를 입수하고, 컴파일 및 퓨징하는 것부터 시작하고자 합니다. 다음은 기본적인 입출력과 쓰레드를 사용하기 위한 API들을 살펴 본 후, 프로젝트와 관련된 내용을 통해 점차 수준을 높여가보고자 합니다. 프로젝트의 수준이 높아지면, 프로파일링과 함께 상위 소프트웨어와 연동하는 것도 알아 봐야겠습니다.  
+  
+## Who - 누구를 위햐여?
+감히 독자가 생기리라고는 생각지 않습니다만, ChibiOS에 관심을 가지고 도전하고자 하는 분들이 헤매는 일 없이 작업을 진행하는데 도움이 되면 좋겠습니다. 대체로 엔지니어, 메이커, 학생분들이 읽어주시지 않을까 싶으며, 비판과 질문은 본 저장소의 issue에 남겨 주시면 최대한 응답하도록 하겠습니다.  
+
+## Maintainer - 관리자
+[김성준](http://bus710.net) <<bus710@gmail.com>>  
+
+  
 
