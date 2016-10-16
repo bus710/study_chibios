@@ -48,5 +48,9 @@ Also it won't be written in English for now.
 
 김성준 - [bus710.net](http://bus710.net) <<bus710@gmail.com>>  
 
+### References - 참고자료
   
+[1] http://www.chibios.org/dokuwiki/doku.php  
+[2] http://vedder.se/2015/01/vesc-open-source-esc/  
+[3] http://cafe.naver.com/openrt/8952   
 
