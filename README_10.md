@@ -2,7 +2,8 @@
 
 # study_chibios - download and installation
   
-### ChibiOS와 ChibiStudio
+### ChibiOS와 ChibiStudio  
+  
 ChibiOS의 개발자인 Giovanni씨는 웹사이트와 SNS를 통해 그와 그의 팀이 개발한 제품들에 대한 다양한 정보를 제공하고 있습니다.  
     
 - [공식 웹사이트](http://www.chibios.org/)
@@ -18,7 +19,8 @@ ChibiOS는 윈도우즈에서 개발하는 것이 추천 되고 있으며, 개�
   
 저 위의 소스포지에서 ChibiStudio 17 preview를 적당한 위치에 다운로드 바랍니다. 
 
-### 기타 소프트웨어들
+### 기타 소프트웨어들  
+  
 CbiboStudio를 다운 받은 후에도 다음과 같은 유틸리티들이 필요 합니다.
 
 - [7zip](http://www.7-zip.org/): ChibiStudio가 7z으로 압축 되어 있으므로 해제하기 위해 사용 됩니다.
@@ -26,7 +28,8 @@ CbiboStudio를 다운 받은 후에도 다음과 같은 유틸리티들이 필�
 - [Java SE Runtime Env., 32bit](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html): IDE인 이클립스가 동작하기 위해서는 JRE가 필요 합니다. 단, 32비트 버전으로 설치 바랍니다.
 - [Github Desktop](https://desktop.github.com/) 본 안내서를 포함하여 다양한 저장소에서 소스코드들을 다운로드하기 위한 도구 입니다. 
 
-### 설치 과정
+### 설치 과정과 기본 사용방법
+  
 7zip으로 압축을 해제하고 해당 폴더를 확인하면 ChibiStudio 폴더가 있는 것을 알 수 있습니다. 그 폴더를 시스템 루트 디렉토리에 (대부분은 c:\ 드라이브 겠죠.) 붙여넣기 합니다. 그 후 그 폴더에 있는 바로가기 파일(Chibi Studio GCC 4.9)을 적당한 곳에 복사 합니다. JRE가 잘 설치 되었다는 가정하에, 바로가기 파일을 더블클릭하면 이클립스가 실행 됩니다.   
   
 ![images/001.png](images/001.png)
