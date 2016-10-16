@@ -8,18 +8,12 @@
   
 > Hi,  
 >  
-> In ChibiOS the support for STM32 is very complete, basically you just need to port the OS to a different board (your target).  
-> 
->  I recommend using one of the included demos for a while, you just nead a cheap Discovery or Nucleo board. This will allow you to test everything very quickly, you could download ChibiStudio for a very quick startup.  
+> In ChibiOS the support for STM32 is very complete, basically you just need to port the OS to a different board (your target). I recommend using one of the included demos for a while, you just nead a cheap Discovery or Nucleo board. This will allow you to test everything very quickly, you could download ChibiStudio for a very quick startup. I am describing the organization for ChibiOS 3.0, it is slightly different for previous versions, you are starting now so 3.0 should be your target. In order to create your project:  
 >  
-> I am describing the organization for ChibiOS 3.0, it is slightly different for previous versions, you are starting now so 3.0 should be your target. In order to create your project:  
->  
->  Step 1 - Creating new board files  
->  
+> Step 1 - Creating new board files  
 > Under ./os/hal/boards there is a directory for each supported board. Copy one of the boards to a new directory, choose a board with the same device you need. You will have for example ./os/hal/boards/myboard.  
 >  
 > Step 2 - Modifying board files  
->  
 > Each directory contains always the same files:  
 > myboard/cfg/board.chcfg <- It is an XML file  
 > myboard/board.c  
@@ -29,15 +23,13 @@
 > The CHCFG file is an XML description of your board: Initial GPIO settings, clock frequency, used device. Using a tool included in ChibiStudio you can generate the .h/.c/.mk files starting from CHCFG file. In ChibiStudio there is a guided XML editor, changing the CHCFG file is driven by a schema so it is not easy to do it wrong. Optionally you can edit board.h manually, it is not difficult but not the preferred way.  
 >  
 > Step 3 - Create your application  
-> 
 > Clone one of the demos using the same device into another directory: ./demos/myproj. You can use any path but lets start simple.  
 > Open .project and .cproject in an editor and search/replace the project name with your name. Import the new project in your Eclipse workspace (if using Eclipse/ChibiStudio).  
 >  
 > Step 4 - Modify the Makefile  
->  
 > There is a path to the board.mk file, change it to point to your board.mk.  
 >  
 > Step 5 - Cleanup main() function and write yur code  
->  
 > It is done, you remove the code not needed (blinker thread, test code execution) the you have an empty project.  
->  
+  
+
