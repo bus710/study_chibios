@@ -29,8 +29,9 @@
 >  
 > **Step 5 - Cleanup main() function and write yur code**  
 > It is done, you remove the code not needed (blinker thread, test code execution) the you have an empty project.  
-   
-   
+  
+  
+### In our case     
    
 우리의 경우에는, ChibiOS가 STM32F407-Discovery를 완벽 지원하기 때문에, 1~2 단계를 따를 필요가 없습니다. 3단계 부터 살펴 보자면:  
 
