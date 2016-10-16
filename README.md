@@ -3,8 +3,13 @@
 This repo shares my experience in using ChibiOS for personal projects.  
 본 리포지토리는 ChibiOS를 개인 프로젝트를 적용하며 겪은 내용을 공유 합니다.  
   
-Since I am not an RTOS expert, the contents can be wrong. Also it won't be written in English for now.  
+Since I am not an RTOS expert, the contents can be wrong.  
 제가 RTOS 전문가가 아니기 때문에 내용에 오류가 있을 수 있습니다.   
+  
+Readers should be careful and take responsibility about results in following this guide.  
+독자분들은 본 가이드를 적용함에 있어 주의를 요하며 결과들에 대한 책임이 있습니다.   
+  
+Also it won't be written in English for now.  
 또한 당분간은 영어가 아닌 한글로 내용을 작성하고자 합니다.  
   
 ### Why - 왜 ChibiOS를 쓰게 되었나?  
