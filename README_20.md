@@ -4,7 +4,7 @@
 
 ### scratching from an existing project
   
-포럼을 뒤져 보다가 충격적인(?) 사실을 알게 되었습니다. ChibiOS를 사용함에 있어서 "새 프로젝트 마법사" 같은 것은 없다는 것이죠. ChibiStudio를 쓰더라도 말입니다. 대신 Giovanni씨는 기존 프로젝트에서 스크래치를 통해 만드는 방법을 소개하고 있습니다. [관련글](http://www.chibios.com/forum/viewtopic.php?t=2655#p21120)
+포럼을 뒤져 보다가 충격적인(?) 사실을 알게 되었습니다. ChibiOS를 사용함에 있어서 "새 프로젝트 마법사" 같은 것은 없다는 것이죠. ChibiStudio를 쓰더라도 말입니다. 대신 Giovanni씨는 기존 프로젝트에서 스크래치를 통해 만드는 방법을 소개하고 있습니다. ([관련글](http://www.chibios.com/forum/viewtopic.php?t=2655#p21120))
   
 > In ChibiOS the support for STM32 is very complete, basically you just need to port the OS to a different board (your target). I recommend using one of the included demos for a while, you just nead a cheap Discovery or Nucleo board. This will allow you to test everything very quickly, you could download ChibiStudio for a very quick startup. I am describing the organization for ChibiOS 3.0, it is slightly different for previous versions, you are starting now so 3.0 should be your target. In order to create your project:  
 >  
