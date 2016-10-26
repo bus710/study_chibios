@@ -3,9 +3,10 @@
 # study_chibios - understanding the basic structure.
 
 ### reading the example
-
-이제 프로젝트도 **import** 및 compile이 잘 되고 있으니 조금씩 코드를 분석해야할 차례일 것 입니다. 현재로써 제일 좋은 예제는 역시 import한 프로젝트의 [main.c](projects/RT-STM32F407-DISCOVERY-01/main.c) 일 것 입니다. 
- 
+  
+이제 프로젝트도 **import** 및 compile이 잘 되고 있으니 조금씩 코드를 분석해야할 차례일 것 입니다.   
+현재로써 제일 좋은 예제는 역시 import한 프로젝트에 속해 있는 [main.c](projects/RT-STM32F407-DISCOVERY-01/main.c) 일 것 입니다. 먼저 전체 소스 코드를 살펴 본 후 각 부분에 대해 해설을 적어 보도록 하겠습니다.   
+   
 ```C 
  #include "ch.h"
  #include "hal.h"
@@ -67,3 +68,5 @@
   }
 }
 ```
+  
+(현재 진행 중 입니다.)
