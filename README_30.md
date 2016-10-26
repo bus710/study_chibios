@@ -5,8 +5,7 @@
 ### reading the example
 
 이제 프로젝트도 **import** 및 compile이 잘 되고 있으니 조금씩 코드를 분석해야할 차례일 것 입니다. 현재로써 제일 좋은 예제는 역시 import한 프로젝트의 [main.c](projects/RT-STM32F407-DISCOVERY-01/main.c) 일 것 입니다. 
-
-~~~~
+[code language="c"]
  #include "ch.h"
  #include "hal.h"
  #include "test.h"
@@ -66,4 +65,4 @@
     chThdSleepMilliseconds(500);
   }
 }
-~~~~ 
+[/code]
