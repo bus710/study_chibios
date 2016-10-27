@@ -70,4 +70,14 @@
 }
 ```
   
-(현재 진행 중 입니다.)
+  
+### anatomy of the example
+  
+먼저 include 부분부터 보도록 하겠습니다.
+
+```C
+ #include "ch.h"
+ #include "hal.h"
+ #include "test.h"
+```
+  
