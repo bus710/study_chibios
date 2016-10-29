@@ -81,8 +81,8 @@
  #include "test.h"
 ```
 
-제일 첫 줄에서는 "ch.h" 라이브러리의 사용을 선언하고 있습니다. 해당 파일의 위치는 "C:\ChibiStudio\chibios161\os\rt\include" 입니다. 간단히 파일의 내용을 살펴 보자면 코어 헤더와 서브시스템 헤더가 있는 것을 확인 할 수 있습니다.  
-공식 웹사이트에서 열람할 수 있는 "The ultimate guide"에 따르면, rt 디렉토리의 내용은 아키텍쳐와 컴파일러로부터 독립적인, 즉 OS의 로직을 담당하는 코드라는 내용의 해설이 있습니다 ([>>>](http://www.chibios.org/dokuwiki/doku.php?id=chibios:book:architecture#the_big_picture)). 이를 통해, "ch.h"는 OS에 관련 된 API를 호출하기 위해서 사용하는 것임을 유추할 수 있겠습니다. 또한 예제 코드 내용 중 "ch"라는 접두어로 시작하는 API들이 저 "ch.h"를 통해 선언되고 사용될 수 있음을 짐작할 수 있습니다.   
+제일 첫 줄에서는 **"ch.h"** 라이브러리의 사용을 선언하고 있습니다. 해당 파일의 위치는 **"C:\ChibiStudio\chibios161\os\rt\include"** 입니다. 간단히 파일의 내용을 살펴 보자면 코어 헤더와 서브시스템 헤더가 있는 것을 확인 할 수 있습니다.  
+공식 웹사이트에서 열람할 수 있는 **"The ultimate guide"**에 따르면, rt 디렉토리의 내용은 아키텍쳐와 컴파일러로부터 독립적인, 즉 OS의 로직을 담당하는 코드라는 내용의 해설이 있습니다 ([>>>](http://www.chibios.org/dokuwiki/doku.php?id=chibios:book:architecture#the_big_picture)). 이를 통해, **"ch.h"**는 OS에 관련 된 API를 호출하기 위해서 사용하는 것임을 유추할 수 있겠습니다. 또한 예제 코드 내용 중 **"ch"**라는 접두어로 시작하는 API들이 저 **"ch.h"**를 통해 선언되고 사용될 수 있음을 짐작할 수 있습니다.   
 
 다음 줄에서는 "hal.h" 라이브러리의 사용을 선언하고 있습니다. 해당 파일의 위치는 "C:\ChibiStudio\chibios161\os\hal\include" 입니다. 역시 간단히 파일의 내용을 살펴 보자면 MCU와 주변 장치에 관련 된 내용을 담고 있는 것을 확인할 수 있습니다.   
 HAL은 "Hardware Abstract Layer"의 약자인 것... OS에 관심 있는 분들은 다들 아시리라 생각 합니다. 즉, 다양한 종류의 하드웨어를 일관적인 API로 접근 할 수 있게 하는 레이어이며, 해당 레이어에 속한 API를 호출하기 위해 사용하는 것임을 유추할 수 있습니다. 예제 코드 내용 중 "hal"이라는 접두어로 시작하는 API들이 저 "hal.h"를 통해 선언되고 사용됭 수 있음을 짐작할 수 있습니다.   
