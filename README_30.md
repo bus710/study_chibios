@@ -116,6 +116,24 @@
   
 이하의 부분은 쓰레드의 수퍼루프와 GPIO 제어, 그리고 쓰레드의 sleep을 통해 LED를 제어하는 것으로 여겨 집니다. (이 부분은 회로도와 함께 봐야할 부분이지만, 일단은 간단히 넘어가도록 하겠습니다.) GPIO를 제어하기 위해서 "palSetPad" 함수와 "GPIOD", "GPIOD_LED3" 예약어들을 사용했습니다. 해당 함수는 "pal.h" 내에 선언 되어 있습니다. 이클립스의 선언 추적 기능(Open Declaration F3)을 사용하여 확인해 보면, 저 함수가 HAL에 속하며 I/O 포트를 제어하기 위해 사용 되었음을 알 수 있습니다. 첫 인자는 포트명이고 MCU에 종속적인 값 입니다. 두번째 인자는 핀의 이름이고 보드에 종속적인 값 입니다. 각각의 값을 확인하기 위해서는 헤더 파일을 살펴 봐야 하겠지만, 타겟 보드에 따라 파일이 달라지므로 가볍게 패스~~~. 여담이지만 이후에 MCU를 바꾸거나 보드를 새로 개발할 때면 이러한 하드웨어 종속적인 부분을 바꿔주는, 이른 바 "포팅"을 수행해 주어야 할 것 입니다. 
   
-  
+```C
+ int main(void) {
+  halInit();
+  chSysInit();
 
+  sdStart(&SD2, NULL);
+  palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
+  palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
+
+  chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
+
+  while (true) {
+    if (palReadPad(GPIOA, GPIOA_BUTTON))
+      TestThread(&SD2);
+    chThdSleepMilliseconds(500);
+  }
+}
+```
+
+이제 드디어 어플리케이션의 실제 진입점인 main 함수입니다.  
 
