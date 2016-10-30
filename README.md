@@ -64,8 +64,8 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 ### Maintainer - 관리자  
 
 김성준  
-* 프로필: [bus710.net](http://bus710.net) 
-* 연락처: <<bus710@gmail.com>>  
+- 프로필: [bus710.net](http://bus710.net) 
+- 연락처: <<bus710@gmail.com>>  
   
 ### References - 참고자료
   
