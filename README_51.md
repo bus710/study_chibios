@@ -32,6 +32,9 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
   
 ![images/202.png](images/202.png)  
 
-다음으로는 여타 ChibiOS 프로젝트와 마찬가지로 컴파일(Build All)을 수행 해주면, 정상적으로 컴파일 된 것을 확인할 수 있을 것 입니다.  
+다음으로는 여타 ChibiOS 프로젝트와 마찬가지로 컴파일(Project >> Build All (^B))을 수행 해주면, 정상적으로 컴파일 된 것을 확인할 수 있을 것 입니다.  
   
+### anatomy OpenESC  
   
+컴파일이 가능한 OpenESC 프로젝트를 입수하였으니, 이제 프로젝트의 구조를 파악 해야할 것 입니다.
+
