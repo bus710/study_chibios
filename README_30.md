@@ -147,7 +147,7 @@
   
 **"chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);"** 함수가 드디어 나왔습니다. 이 함수가 바로 쓰레드의 메모리 공간과 쓰레드 함수를 연결해주는, 즉, 실제로 쓰레드를 deploy하는 함수인 것 입니다. 언급한 바와 같이 정적 쓰레드를 생성하는데 쓰이며, 인자를 5개나 필요로 합니다. 첫번째는 **waThread1** 입니다. 저 위에 정의한 메모리 공간의 이름이죠. 두번째는 **sizeof(waThread1)** 입니다. 메모리 공간의 크기를 전달해 주어야 합니다. 다음은 **NORMALPRIO** 입니다. 쓰레드의 우선 순위인 priority 값을 일반 등급으로 지정해 주는 것 입니다. 네번째인 **Thread1**은 저 위에 정의한 쓰레드 함수의 이름 입니다. 마지막인 **NULL**은 쓰레드 함수에 전달 될 인자들을 위해 사용 됩니다. 여기서는 메인 쓰레드에서 자식 쓰레드로 인자를 전하지 않기에 NULL로 선언이 된 것이죠.  
 
-이 후는 수퍼루프 입니다. **"if (palReadPad(GPIOA, GPIOA_BUTTON))*""를 통해 GPIOA_BUTTON이 눌리면 **"TestThread(&SD2);"**를 호출하여 UART 터미널에 OS의 현재 상태를 출력해 줍니다. 그 이후는 **"chThdSleepMilliseconds(500);"** 입니다. 0.5초간 해당 쓰레드를 잠 재우고 다른 쓰레드가 실행 될 수 있도록 커널에게 권한을 넘겨 줍니다. 
+이 후는 수퍼루프 입니다. **"if (palReadPad(GPIOA, GPIOA_BUTTON))"**를 통해 GPIOA_BUTTON이 눌리면 **"TestThread(&SD2);"** 를 호출하여 UART 터미널에 OS의 현재 상태를 출력해 줍니다. 그 이후는 **"chThdSleepMilliseconds(500);"** 입니다. 0.5초간 해당 쓰레드를 잠 재우고 다른 쓰레드가 실행 될 수 있도록 커널에게 권한을 넘겨 줍니다. 
    
   
 ### done!
