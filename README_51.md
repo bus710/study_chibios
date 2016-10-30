@@ -38,62 +38,66 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
   
 컴파일이 가능한 OpenESC 프로젝트를 입수하였으니, 이제 프로젝트의 구조를 파악 해야할 것 입니다.
   
-아래의 리스트는 ChibiOS의 어플리케이션을 위한 기본적인 파일들 입니다. 
-  
-- .cproject
-- .project
-- chconf.h
-- halconf.h
-- main.c
-- Makefile
-- mcuconf.h
-- readme.txt
+먼저, 아래의 리스트는 ChibiOS의 어플리케이션을 위한 기본적인 파일들 입니다. 
 
-아래의 리스트는 OpenESC에만 속한 모든 파일들 입니다. 즉, 위의 파일들을 기본으로 삼아 OpenESC를 위해 작성 된 파일들인 것 입니다.  
+| 번호 	| 파일명 		| 설명 | 
+| :----	| :---- 		| :---- |
+| 1		| .cproject		|	|
+| 2		| .project		|	| 
+| 3		| chconf.h		|	| 
+| 4		| halconf.h		| 	|
+| 5		| main.c		|	|
+| 6		| Makefile		|	|
+| 7		| mcuconf.h		| 	|
+| 8		| readme.txt	|	|
 
-- appconf (폴더)
-- application (폴더)
-- ChibiOS_3.0.2 (폴더) 
-- docs (폴더)
-- hwconf (폴더)
-- mcconf (폴더)
-- nrf (폴더)
-- .cproject
-- .project
-- buffer.c/h
-- chconf.h
-- comm_can.c/h
-- comm_usb.c/h
-- comm_usb_serial.c/h
-- commands.c/h
-- conf_general.c/h
-- crc.c/h
-- datatypes.h
-- digital_filter.c/h
-- eeprom.c/h
-- encoder.c/h
-- flash_helper.c/h
-- halconf.h
-- irq_hadlers.c
-- isr_vector_table.h
-- ld_eeprom_emu.ld
-- led_external.c/h
-- ledpwm.c/h
-- main.c
-- Makefile
-- mc_interface.c/h
-- mcpwm.c/h
-- mcpwm_foc.c/h
-- mcuconf.h
-- packet.c/h
-- servo.c/h
-- servo_dec.c/h
-- servo_simple.c/h
-- stm32-bv_openocd.cfg
-- stm32f4xx_conf.h
-- terminal.c/h
-- timeout.c/h
-- utils.c/h
-- ws2811.c/h
+아래의 리스트는 OpenESC에 속한 모든 파일들 입니다. 즉, 위의 파일들을 기본으로 삼아 OpenESC를 위해 작성 된 파일들인 것 입니다.  
+
+| 번호	| 파일명 				| 설명 		| 
+| :----	| :---- 				| :---- 	|
+| 1		| appconf 				| 폴더,  	|
+| 2		| application 			| 폴더,  	|
+| 3		| ChibiOS_3.0.2			| 폴더,  	|
+| 4		| docs 					| 폴더,  	|
+| 5		| hwconf 				| 폴더,  	|
+| 6		| mcconf				| 폴더,  	|
+| 7		| nrf					| 폴더,  	|
+| 8		| .cproject				| 			|
+| 9		| .project				|			|
+| 10	| buffer.c/h			|			|
+| 11	| chconf.h				|			|
+| 12	| comm_can.c/h			|			|
+| 13	| comm_usb.c/h			|			|
+| 14	| comm_usb_serial.c/h	|			|
+| 15	| commands.c/h			|			|
+| 16	| conf_general.c/h		|			|
+| 17	| crc.c/h				|			|
+| 18	| datatypes.h			|			|
+| 19	| digital_filter.c/h	|			|
+| 20	| eeprom.c/h			|			|
+| 21	| encoder.c/h			|	|
+| 22	| flash_helper.c/h		|	|
+| 23	| halconf.h				|	|
+| 24	| irq_hadlers.c			|	|
+| 25	| isr_vector_table.h	|	|
+| 26	| ld_eeprom_emu.ld		|	|
+| 27	| led_external.c/h		|	|
+| 28	| ledpwm.c/h			|	|
+| 29	| main.c				|	|
+| 30	| Makefile				|	|
+| 31	| mc_interface.c/h		|	|
+| 32	| mcpwm.c/h				|	|
+| 33	| mcpwm_foc.c/h			|	|
+| 34	| mcuconf.h				|	|
+| 35	| packet.c/h			|	|
+| 36	| servo.c/h				|	|
+| 37	| servo_dec.c/h			|	|
+| 38	| servo_simple.c/h		|	|
+| 39	| stm32-bv_openocd.cfg	|	|
+| 40	| stm32f4xx_conf.h		|	|
+| 41	| terminal.c/h			|	|
+| 42	| timeout.c/h			|	|
+| 43	| utils.c/h				|	|
+| 44	| ws2811.c/h			|	|
 
 저 두번째 리스트에 속한 파일들을 복사하여 **projects_esc/p001**에 붙여 넣었습니다. 이제부터는 필요한 첫번째 기능을 p001에 넣고, 두번째 기능이 추가 되면 p002에 복사해 넣도록 하겠습니다. 즉, p001은 p002의 하위 호환이 되는 셈 입니다.  
