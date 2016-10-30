@@ -24,7 +24,7 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
   
 저희가 현재 교재로 삼고 있는 커밋 버전은 **"1655c11"**이며 제 계정에 fork 해 놓은 상태 입니다 ([>>>](https://github.com/bus710/bldc)). 따라서 해당 저장소를 클론하여 폴더를 열어보면 약 70개에 가까운 파일들(폴더, 헤더, c코드, makefile...)이 있음을 알 수 있습니다. 일단은 이클립스에서 해당 프로젝트를 열어 컴파일을 해보도록 하겠습니다. 
   
-이를 위해서는 이클립스에서 **"File >> Open >> Makefile Project with Existing Code"**를 실행합니다. 
+이를 위해서는 이클립스에서 **"File >> New >> Makefile Project with Existing Code"**를 실행합니다. 
   
 ![images/201.png](images/201.png)  
   
@@ -37,4 +37,61 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
 ### anatomy OpenESC  
   
 컴파일이 가능한 OpenESC 프로젝트를 입수하였으니, 이제 프로젝트의 구조를 파악 해야할 것 입니다.
+  
+아래의 리스트는 ChibiOS의 기본 파일과 OpenESC가 중복 되는 파일들 입니다. 
+  
+- .cproject
+- .project
+- chconf.h
+- halconf.h
+- main.c
+- Makefile
+- mcuconf.h
+- readme.txt
 
+아래의 리스트는 OpenESC에만 속한, 프로젝트를 위해 추가 된 파일들 입니다. 
+
+- appconf (폴더)
+- application (폴더)
+- ChibiOS_3.0.2 (폴더) 
+- docs (폴더)
+- hwconf (폴더)
+- mcconf (폴더)
+- nrf (폴더)
+- .cproject
+- .project
+- buffer.c/h
+- chconf.h
+- comm_can.c/h
+- comm_usb.c/h
+- comm_usb_serial.c/h
+- commands.c/h
+- conf_general.c/h
+- crc.c/h
+- datatypes.h
+- digital_filter.c/h
+- eeprom.c/h
+- encoder.c/h
+- flash_helper.c/h
+- halconf.h
+- irq_hadlers.c
+- isr_vector_table.h
+- ld_eeprom_emu.ld
+- led_external.c/h
+- ledpwm.c/h
+- main.c
+- Makefile
+- mc_interface.c/h
+- mcpwm.c/h
+- mcpwm_foc.c/h
+- mcuconf.h
+- packet.c/h
+- servo.c/h
+- servo_dec.c/h
+- servo_simple.c/h
+- stm32-bv_openocd.cfg
+- stm32f4xx_conf.h
+- terminal.c/h
+- timeout.c/h
+- utils.c/h
+- ws2811.c/h
