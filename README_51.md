@@ -38,7 +38,7 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
   
 컴파일이 가능한 OpenESC 프로젝트를 입수하였으니, 이제 프로젝트의 구조를 파악 해야할 것 입니다.
   
-아래의 리스트는 ChibiOS의 기본 파일과 OpenESC가 중복 되는 파일들 입니다. 
+아래의 리스트는 ChibiOS의 어플리케이션을 위한 기본적인 파일들 입니다. 
   
 - .cproject
 - .project
@@ -49,7 +49,7 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
 - mcuconf.h
 - readme.txt
 
-아래의 리스트는 OpenESC에만 속한, 프로젝트를 위해 추가 된 파일들 입니다. 
+아래의 리스트는 OpenESC에만 속한 모든 파일들 입니다. 즉, 위의 파일들을 기본으로 삼아 OpenESC를 위해 작성 된 파일들인 것 입니다.  
 
 - appconf (폴더)
 - application (폴더)
