@@ -36,7 +36,7 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 | 2. 새 프로젝트의 생성       			| [>>>](README_20.md) |  
 | 3. 프로젝트 기본 구조의 이해  		| |  
 | - 3.1 main.c 살펴보기 				| [>>>](README_30.md) |  
-| - 3.2 MCU 기능 제어하기~~ 			| [N/A](README_32.md) |  
+| - 3.2 MCU 기본 기능 설정하기	 		| [N/A](README_32.md) |  
 | 4. API의 기본과 응용          		| |  
 | - 4.1 GPIO			          		| [N/A](README_41.md) |  
 | - 4.2 USART			          		| [N/A](README_42.md) |  
@@ -46,12 +46,13 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 | - 4.6 Thread 관리				        | [N/A](README_46.md) |  
 | 5. 응용 프로젝트						| |  
 | - 5.1 Vedderb-OpenESC 분석하기     	| [>>>](README_51.md) |  
-| - 5.2		 	   			 			| [N/A](README_52.md) |  
+| - 5.2	OpenESC 기반 LED 제어 			| [N/A](README_52.md) |  
+| - 5.3	OpenESC 기반 UART 제어 			| [N/A](README_53.md) |  
 | 6. 외부 시스템 연동		   			| |  
 | - 6.1 ROS와 연동하기    				| [N/A](README_60.md) |  
 | - 6.2 Unity3D와 연동하기	    		| [N/A](README_61.md) |  
 | 7. 다른 MCU로 포팅하기	    		| |  
-| -7.1						    		| [N/A](README_70.md) |  
+| - 7.1						    		| [N/A](README_70.md) |  
    
 ### Requirement - 준비물들  
   
