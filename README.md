@@ -44,8 +44,8 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 | - 4.4 PWM				          		| [N/A](README_44.md) |  
 | - 4.5 SPI				          		| [N/A](README_45.md) |  
 | - 4.6 Thread 관리				        | [N/A](README_46.md) |  
-| 5. 응용 프로젝트 (Vedderb-OpenESC)	| |  
-| - 5.1 OpenESC 분석하기     			| [>>>](README_51.md) |  
+| 5. 응용 프로젝트						| |  
+| - 5.1 Vedderb-OpenESC 분석하기     	| [>>>](README_51.md) |  
 | - 5.2		 	   			 			| [N/A](README_52.md) |  
 | 6. 외부 시스템 연동		   			| |  
 | - 6.1 ROS와 연동하기    				| [N/A](README_60.md) |  
