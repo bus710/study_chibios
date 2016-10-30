@@ -28,6 +28,11 @@
 #ifndef _CHCONF_H_
 #define _CHCONF_H_
 
+#define CHPRINTF_USE_FLOAT				TRUE
+#define CORTEX_SIMPLIFIED_PRIORITY		FALSE
+#define PORT_IDLE_THREAD_STACK_SIZE		64
+#define PORT_INT_REQUIRED_STACK			128
+
 /*===========================================================================*/
 /**
  * @name System timers settings
@@ -56,7 +61,7 @@
  *          The value one is not valid, timeouts are rounded up to
  *          this value.
  */
-#define CH_CFG_ST_TIMEDELTA                 2
+#define CH_CFG_ST_TIMEDELTA                 0
 
 /** @} */
 
@@ -79,7 +84,7 @@
  * @note    The round robin preemption is not supported in tickless mode and
  *          must be set to zero in that case.
  */
-#define CH_CFG_TIME_QUANTUM                 0
+#define CH_CFG_TIME_QUANTUM                 4
 
 /**
  * @brief   Managed RAM size.
@@ -395,7 +400,7 @@
  * @note    This debug option is not currently compatible with the
  *          tickless mode.
  */
-#define CH_DBG_THREADS_PROFILING            FALSE
+#define CH_DBG_THREADS_PROFILING            TRUE
 
 /** @} */
 

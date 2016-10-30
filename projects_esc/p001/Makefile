@@ -5,7 +5,9 @@
 
 # Compiler options here.
 ifeq ($(USE_OPT),)
-  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16
+  USE_OPT = -O2 -ggdb -fomit-frame-pointer -falign-functions=16 -std=gnu99
+  USE_OPT += -DBOARD_OTG_NOVBUSSENS $(build_args)
+  USE_OPT += -fsingle-precision-constant -Wdouble-promotion
 endif
 
 # C specific options here (added to USE_OPT).
@@ -30,7 +32,7 @@ endif
 
 # Enable this if you want link time optimizations (LTO)
 ifeq ($(USE_LTO),)
-  USE_LTO = yes
+  USE_LTO = no
 endif
 
 # If enabled, this option allows to compile the application in THUMB mode.
@@ -40,7 +42,7 @@ endif
 
 # Enable this if you want to see the full log while compiling.
 ifeq ($(USE_VERBOSE_COMPILE),)
-  USE_VERBOSE_COMPILE = no
+  USE_VERBOSE_COMPILE = yes
 endif
 
 # If enabled, this option makes the build process faster by not compiling
@@ -71,7 +73,12 @@ endif
 
 # Enables the use of FPU on Cortex-M4 (no, softfp, hard).
 ifeq ($(USE_FPU),)
-  USE_FPU = no
+  USE_FPU = hard
+endif
+
+# Enable this if you really want to use the STM FWLib.
+ifeq ($(USE_FWLIB),)
+  USE_FWLIB = yes
 endif
 
 #
@@ -83,12 +90,10 @@ endif
 #
 
 # Define project name here
-PROJECT = p001
+PROJECT = BLDC_4_ChibiOS
 
 # Imported source files and paths
-CHIBIOS = C:/ChibiStudio/chibios161
-#CHIBIOS = ../../..
-
+CHIBIOS = ChibiOS_3.0.2
 # Startup files.
 include $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC/mk/startup_stm32f4xx.mk
 # HAL-OSAL files (optional).
@@ -100,10 +105,13 @@ include $(CHIBIOS)/os/hal/osal/rt/osal.mk
 include $(CHIBIOS)/os/rt/rt.mk
 include $(CHIBIOS)/os/rt/ports/ARMCMx/compilers/GCC/mk/port_v7m.mk
 # Other files (optional).
-include $(CHIBIOS)/test/rt/test.mk
+#include $(CHIBIOS)/test/rt/test.mk
+include hwconf/hwconf.mk
+include applications/applications.mk
+include nrf/nrf.mk
 
 # Define linker script file here
-LDSCRIPT= $(STARTUPLD)/STM32F407xG.ld
+LDSCRIPT= ld_eeprom_emu.ld
 
 # C sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -114,8 +122,37 @@ CSRC = $(STARTUPSRC) \
        $(HALSRC) \
        $(PLATFORMSRC) \
        $(BOARDSRC) \
-       $(TESTSRC) \
-       main.c
+       $(CHIBIOS)/os/hal/lib/streams/chprintf.c \
+       $(CHIBIOS)/os/various/syscalls.c \
+       main.c \
+       comm_usb_serial.c \
+       irq_handlers.c \
+       buffer.c \
+       comm_usb.c \
+       crc.c \
+       digital_filter.c \
+       ledpwm.c \
+       mcpwm.c \
+       servo_dec.c \
+       utils.c \
+       servo.c \
+       servo_simple.c \
+       packet.c \
+       terminal.c \
+       conf_general.c \
+       eeprom.c \
+       commands.c \
+       timeout.c \
+       comm_can.c \
+       ws2811.c \
+       led_external.c \
+       encoder.c \
+       flash_helper.c \
+       mc_interface.c \
+       mcpwm_foc.c \
+       $(HWSRC) \
+       $(APPSRC) \
+       $(NRFSRC)
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
@@ -146,7 +183,13 @@ ASMSRC = $(STARTUPASM) $(PORTASM) $(OSALASM)
 
 INCDIR = $(STARTUPINC) $(KERNINC) $(PORTINC) $(OSALINC) \
          $(HALINC) $(PLATFORMINC) $(BOARDINC) $(TESTINC) \
-         $(CHIBIOS)/os/various
+         $(CHIBIOS)/os/various \
+         $(CHIBIOS)/os/hal/lib/streams \
+         mcconf \
+         appconf \
+         $(HWINC) \
+         $(APPINC) \
+         $(NRFINC)
 
 #
 # Project, sources and paths
@@ -208,11 +251,34 @@ UINCDIR =
 ULIBDIR =
 
 # List all user libraries here
-ULIBS =
+ULIBS = -lm
 
 #
 # End of user defines
 ##############################################################################
+
+ifeq ($(USE_FWLIB),yes)
+  include $(CHIBIOS)/ext/stdperiph_stm32f4/stm32lib.mk
+  CSRC += $(STM32SRC)
+  INCDIR += $(STM32INC)
+  USE_OPT += -DUSE_STDPERIPH_DRIVER
+endif
+
+build/$(PROJECT).bin: build/$(PROJECT).elf 
+	$(BIN) build/$(PROJECT).elf build/$(PROJECT).bin
+
+# Program
+upload: build/$(PROJECT).bin
+	#qstlink2 --cli --erase --write build/$(PROJECT).bin
+	#openocd -f interface/stlink-v2.cfg -c "set WORKAREASIZE 0x2000" -f target/stm32f4x_stlink.cfg -c "program build/$(PROJECT).elf verify reset" # Older openocd
+	openocd -f board/stm32f4discovery.cfg -c "reset_config trst_only combined" -c "program build/$(PROJECT).elf verify reset exit" # For openocd 0.9
+
+#program with olimex arm-usb-tiny-h and jtag-swd adapter board. needs openocd>=0.9
+upload-olimex: build/$(PROJECT).bin
+	openocd -f interface/ftdi/olimex-arm-usb-tiny-h.cfg -f interface/ftdi/olimex-arm-jtag-swd.cfg -c "set WORKAREASIZE 0x2000" -f target/stm32f4x.cfg -c "program build/$(PROJECT).elf verify reset"
+
+debug-start:
+	openocd -f stm32-bv_openocd.cfg
 
 RULESPATH = $(CHIBIOS)/os/common/ports/ARMCMx/compilers/GCC
 include $(RULESPATH)/rules.mk
