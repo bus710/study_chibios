@@ -36,7 +36,7 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 | 2. 새 프로젝트의 생성       			| [>>>](README_20.md) |  
 | 3. 프로젝트 기본 구조의 이해  		| |  
 | - 3.1 main.c 살펴보기 				| [>>>](README_30.md) |  
-| - 3.2 MCU 기본 기능 설정하기	 		| [N/A](README_32.md) |  
+| - 3.2 디버깅 하기				 		| [N/A](README_32.md) |  
 | 4. API의 기본과 응용          		| |  
 | - 4.1 GPIO			          		| [N/A](README_41.md) |  
 | - 4.2 USART			          		| [N/A](README_42.md) |  

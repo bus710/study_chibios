@@ -40,20 +40,20 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
   
 먼저, 아래의 리스트는 ChibiOS의 어플리케이션을 위한 기본적인 파일들 입니다. 
 
-| 번호 	| 파일명 		| 설명 | 
-| :----	| :---- 		| :---- |
-| 1		| .cproject		|	|
-| 2		| .project		|	| 
-| 3		| chconf.h		|	| 
-| 4		| halconf.h		| 	|
-| 5		| main.c		|	|
-| 6		| Makefile		|	|
-| 7		| mcuconf.h		| 	|
-| 8		| readme.txt	|	|
+| 번호 	| 파일명 (알파벳 순) 	| 설명 | 
+| :----	| :---- 				| :---- |
+| 1		| .cproject				|	|
+| 2		| .project				|	| 
+| 3		| chconf.h				|	| 
+| 4		| halconf.h				| 	|
+| 5		| main.c				|	|
+| 6		| Makefile				|	|
+| 7		| mcuconf.h				| 	|
+| 8		| readme.txt			|	|
 
 아래의 리스트는 OpenESC에 속한 모든 파일들 입니다. 즉, 위의 파일들을 기본으로 삼아 OpenESC를 위해 작성 된 파일들인 것 입니다.  
 
-| 번호	| 파일명 				| 설명 		| 
+| 번호	| 파일명 (알파벳 순)	| 설명 		| 
 | :----	| :---- 				| :---- 	|
 | 1		| appconf 				| 폴더,  	|
 | 2		| application 			| 폴더,  	|
@@ -101,3 +101,6 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
 | 44	| ws2811.c/h			|	|
 
 저 두번째 리스트에 속한 파일들을 복사하여 **projects_esc/p001**에 붙여 넣었습니다. 이제부터는 필요한 첫번째 기능을 p001에 넣고, 두번째 기능이 추가 되면 p002에 복사해 넣도록 하겠습니다. 즉, p001은 p002의 하위 호환이 되는 셈 입니다.  
+  
+  
+[서문으로 돌아가기](README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
