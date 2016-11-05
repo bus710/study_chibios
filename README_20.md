@@ -51,8 +51,11 @@
 ![images/006.png](images/006.png)  
   
 ![images/007.png](images/007.png)  
-  
+
+### done!
+
 이렇게 편집 된 프로젝트는 ChibiStudio (이클립스)에서 **import** 하고 컴파일 함으로써 설정이 제대로 된 것을 확인할 수 있습니다.
+(추가: 이후에 언급 되겠지만, vedder의 OpenESC 등을 비롯한 기존의 프로젝트를 이클립스로 불러오기 위해서는 import가 아닌 File >> New >> Existing Project의 메뉴를 이용해야 하며, 그 후의 다이얼로그에서 몇가지 옵션을 설정한 후에 이용할 수 있습니다. 자세한 것은 챕터 5에서 설명 하도록 하겠습니다.)
   
 
 [서문으로 돌아가기](README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
