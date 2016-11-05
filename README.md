@@ -36,13 +36,13 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 | 2. 새 프로젝트의 생성       			| [>>>](README_20.md) |  
 | 3. 디버깅 하기				 		| [N/A](README_30.md) |  
 | 4. 기본편				          		| |  
-| - 4.1 main.c 살펴보기 				| [>>>](README_40.md) |  
-| - 4.2 GPIO			          		| [N/A](README_41.md) |  
-| - 4.3 USART			          		| [N/A](README_42.md) |  
-| - 4.4 Timer			          		| [N/A](README_43.md) |  
-| - 4.5 PWM				          		| [N/A](README_44.md) |  
-| - 4.6 SPI				          		| [N/A](README_45.md) |  
-| - 4.7 Thread 관리				        | [N/A](README_46.md) |  
+| - 4.1 main.c 살펴보기 				| [>>>](README_41.md) |  
+| - 4.2 GPIO			          		| [N/A](README_42.md) |  
+| - 4.3 USART			          		| [N/A](README_43.md) |  
+| - 4.4 Timer			          		| [N/A](README_44.md) |  
+| - 4.5 PWM				          		| [N/A](README_45.md) |  
+| - 4.6 SPI				          		| [N/A](README_46.md) |  
+| - 4.7 Thread 관리				        | [N/A](README_47.md) |  
 | 5. 응용편								| |  
 | - 5.1 Vedderb-OpenESC 분석하기     	| [>>>](README_51.md) |  
 | - 5.2	OpenESC 기반 LED 제어 			| [N/A](README_52.md) |  
