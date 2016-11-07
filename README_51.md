@@ -42,65 +42,67 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
 
 | 번호 	| 파일명 (알파벳 순) 	| 설명 | 
 | :----	| :---- 				| :---- |
-| 1		| .cproject				|	|
-| 2		| .project				|	| 
-| 3		| chconf.h				|	| 
-| 4		| halconf.h				| 	|
-| 5		| main.c				|	|
-| 6		| Makefile				|	|
-| 7		| mcuconf.h				| 	|
-| 8		| readme.txt			|	|
+| 1		| .cproject				| 이클립스와 툴체인의 관계를 설정하기 위한 파일이며, 컴파일러와 링커 옵션의 설정이 가능	|
+| 2		| .project				| 오브젝트를 링킹할 때 참고 되는 파일 | 
+| 3		| chconf.h				| ChibiOS 커널의 전역적 옵션 설정을 하기 위한 파일 | 
+| 4		| halconf.h				| 하드웨어 레이어의 전역적 옵션 설정을 하기 위한 파일 |
+| 5		| main.c				| 어플리케이션 진입점 |
+| 6		| Makefile				| 컴파일 과정을 기술하기 위한 파일 |
+| 7		| mcuconf.h				| ChibiOS가 이용하는 MCU의 기능들의 활성화와 우선권 설정을 하기 위한 파일 	|
+| 8		| readme.txt			| 프로젝트 안내용 파일	|
 
 아래의 리스트는 OpenESC에 속한 모든 파일들 입니다. 즉, 위의 파일들을 기본으로 삼아 OpenESC를 위해 작성 된 파일들인 것 입니다.  
 
 | 번호	| 파일명 (알파벳 순)	| 설명 		| 
 | :----	| :---- 				| :---- 	|
-| 1		| appconf 				| 폴더,  	|
-| 2		| application 			| 폴더,  	|
-| 3		| ChibiOS_3.0.2			| 폴더,  	|
-| 4		| docs 					| 폴더,  	|
-| 5		| hwconf 				| 폴더,  	|
-| 6		| mcconf				| 폴더,  	|
-| 7		| nrf					| 폴더,  	|
-| 8		| .cproject				| 			|
-| 9		| .project				|			|
-| 10	| buffer.c/h			|			|
-| 11	| chconf.h				|			|
-| 12	| comm_can.c/h			|			|
-| 13	| comm_usb.c/h			|			|
-| 14	| comm_usb_serial.c/h	|			|
-| 15	| commands.c/h			|			|
-| 16	| conf_general.c/h		|			|
-| 17	| crc.c/h				|			|
-| 18	| datatypes.h			|			|
-| 19	| digital_filter.c/h	|			|
-| 20	| eeprom.c/h			|			|
-| 21	| encoder.c/h			|	|
-| 22	| flash_helper.c/h		|	|
-| 23	| halconf.h				|	|
-| 24	| irq_hadlers.c			|	|
-| 25	| isr_vector_table.h	|	|
-| 26	| ld_eeprom_emu.ld		|	|
-| 27	| led_external.c/h		|	|
-| 28	| ledpwm.c/h			|	|
-| 29	| main.c				|	|
-| 30	| Makefile				|	|
-| 31	| mc_interface.c/h		|	|
-| 32	| mcpwm.c/h				|	|
-| 33	| mcpwm_foc.c/h			|	|
-| 34	| mcuconf.h				|	|
-| 35	| packet.c/h			|	|
-| 36	| servo.c/h				|	|
-| 37	| servo_dec.c/h			|	|
-| 38	| servo_simple.c/h		|	|
-| 39	| stm32-bv_openocd.cfg	|	|
-| 40	| stm32f4xx_conf.h		|	|
-| 41	| terminal.c/h			|	|
-| 42	| timeout.c/h			|	|
-| 43	| utils.c/h				|	|
-| 44	| ws2811.c/h			|	|
+| 1		| appconf 				| 폴더 - 사용자 앱의 설정을 위한 파일들 |
+| 2		| application 			| 폴더 - OpenESC 상에서 사용자가 앱 개발을 위한 파일들 |
+| 3		| ChibiOS_3.0.2			| 폴더 - ChibiOS 파일들 |
+| 4		| docs 					| 폴더 - Doxygen/LaTeX 문서화를 위한 파일들 |
+| 5		| hwconf 				| 폴더 - PCB 버전별 설정을 위한 파일들 |
+| 6		| mcconf				| 폴더 - 모터 관련 설정을 위한 파일들 |
+| 7		| nrf					| 폴더 - nrf/위모트 관련 파일들 |
+| 8		| .cproject				| 상동		|
+| 9		| .project				| 상동 		|
+| 10	| buffer.c/h			| 버퍼 관리용 모듈들 |
+| 11	| chconf.h				| 상동 		|
+| 12	| comm_can.c/h			| CAN 통신 관련 모듈들 |
+| 13	| comm_usb.c/h			| CMSIS를 이용한 USB 통신 관련 모듈들 |
+| 14	| comm_usb_serial.c/h	| 위 모듈을 위해 제공 되는 저수준 모듈들 |
+| 15	| commands.c/h			| 각종 통신 모듈을 통해 주고 받는 명령을 고수준에서 관리하는 모듈들 |
+| 16	| conf_general.c/h		| 앱 설정을 위한 구조체들을 한 곳에서 관리하기 위한 모듈들 |
+| 17	| crc.c/h				| 안정된 통신을 위해 사용되는 CRC 관련 모듈들 |
+| 18	| datatypes.h			| enum, struct 정의 모음들 |
+| 19	| digital_filter.c/h	| 필터 모듈들 |
+| 20	| eeprom.c/h			| EEPROM 관련 모듈들 |
+| 21	| encoder.c/h			| 모터용 엔코더 관련 모듈둘 |
+| 22	| flash_helper.c/h		| 부트로더 관련 모듈들 |
+| 23	| halconf.h				| 상동	 	|
+| 24	| irq_hadlers.c			| 인터럽트 핸들러들	|
+| 25	| isr_vector_table.h	| 인터럽트 벡터 테이블 |
+| 26	| ld_eeprom_emu.ld		| 링커 스크립트 |
+| 27	| led_external.c/h		| WS2811 모듈을 이용하여 외부 LED를 제어하는 모듈들 |
+| 28	| ledpwm.c/h			| PWM을 이용한 LED 밝기 제어 모듈 |
+| 29	| main.c				| 상동 		|
+| 30	| Makefile				| 상동		|
+| 31	| mc_interface.c/h		| 모터 제어를 위한 인터페이스 모듈들 |
+| 32	| mcpwm.c/h				| 모터 인터페이스에 의해 호출 되는 PWM 관련 모듈들 |
+| 33	| mcpwm_foc.c/h			| 모터 인터페이스에 의해 호출 되는 FOC 관련 모듈들 |
+| 34	| mcuconf.h				| 상동		|
+| 35	| packet.c/h			| 통신 모듈들을 위한 패킷 제어 관련 모듈들 |
+| 36	| servo.c/h				| 포즈 제어 관련 모듈들 |
+| 37	| servo_dec.c/h			| 디코더를 이용한 포즈 제어 관련 모듈들 |
+| 38	| servo_simple.c/h		| 디코더를 이용하지 않는 포즈 제어 |
+| 39	| stm32-bv_openocd.cfg	| OpenOCD 스크립트 |
+| 40	| stm32f4xx_conf.h		| MCU 레지스터 헤더파일 |
+| 41	| terminal.c/h			| Command 상위에서 터미널 입출력을 제어하는 모듈 |
+| 42	| timeout.c/h			| 제어 시간 관리 모듈들 |
+| 43	| utils.c/h				| 각종 연산용 모듈들. 필터와 관련된 모듈들 |
+| 44	| ws2811.c/h			| 외부 LED 제어용 저수준 모듈 |
 
 저 두번째 리스트에 속한 파일들을 복사하여 **projects_esc/p001**에 붙여 넣었습니다. 이제부터는 필요한 첫번째 기능을 p001에 넣고, 두번째 기능이 추가 되면 p002에 복사해 넣도록 하겠습니다. 즉, p001은 p002의 하위 호환이 되는 셈 입니다.  
+   
+간략한 설명을 통해 어떤 기능을 구현하기 위해 어떤 파일들이 편집해야 하는지 알아 보았습니다. 현재로써는 UART와 모터 제어가 최우선 과제여서 순서가 다소 바뀔 수도 있습니다.  
   
-  
+    
 [서문으로 돌아가기](README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
