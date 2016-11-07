@@ -11,6 +11,7 @@ ChibiOS의 개발자인 Giovanni씨는 웹사이트와 SNS를 통해 그와 그�
 - [페이스북](https://www.facebook.com/chibios/)
 - [링크드인](https://www.linkedin.com/company/chibios-rt)
 - [포럼](http://www.chibios.com/forum/)
+- [블로그](http://www.playembedded.org/blog/en/2014/10/11/how-to-setup-chibistudio/)
   
 또한, 실제 소프트웨어들은 소스포지에서 다운로드 가능 합니다.  
 - [소스포지](https://sourceforge.net/projects/chibios/)  
