@@ -28,6 +28,10 @@ CbiboStudio를 다운 받은 후에도 다음과 같은 유틸리티들이 필�
 - [stlink v2 드라이버](http://www.st.com/content/st_com/en/products/development-tools/hardware-development-tools/development-tool-hardware-for-mcus/debug-hardware-for-mcus/debug-hardware-for-stm32-mcus/st-link-v2.html): 타겟인 Discovery 보드에 내장 된 stlink v2를 활용하기 위해서는 드라이버가 필요 합니다. ChibiStudio에 포함된 OpenOCD와 함께 사용 됩니다.
 - [Java SE Runtime Env., 32bit](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html): IDE인 이클립스가 동작하기 위해서는 JRE가 필요 합니다. 단, 32비트 버전으로 설치 바랍니다.
 - [Github Desktop](https://desktop.github.com/) 본 안내서를 포함하여 다양한 저장소에서 소스코드들을 다운로드하기 위한 도구 입니다. 
+- [Vrapper](http://vrapper.sourceforge.net/home/) 개인적으로 vi navigation 스타일을 선호 합니다. 
+- [Eclipse Color Theme](https://marketplace.eclipse.org/content/eclipse-color-theme) 이클립스의 컬러 패키지 입니다. 개인적으로는 Windows Classic을 전체 색상으로 하고, minimal을 에디터의 색상으로 하는 것이 제일 좋았습니다.  
+- [Naver D2coding font](http://dev.naver.com/projects/d2coding) 네이버의 코딩용 폰트 입니다. 
+
 
 ### 설치 과정과 기본 사용방법
   
