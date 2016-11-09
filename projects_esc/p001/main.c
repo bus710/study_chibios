@@ -213,20 +213,18 @@ int main(void) {
 #endif
 
 	// Threads
-	//chThdCreateStatic(periodic_thread_wa, sizeof(periodic_thread_wa), NORMALPRIO, periodic_thread, NULL);
-	//chThdCreateStatic(timer_thread_wa, sizeof(timer_thread_wa), NORMALPRIO, timer_thread, NULL);
+	chThdCreateStatic(periodic_thread_wa, sizeof(periodic_thread_wa), NORMALPRIO, periodic_thread, NULL);
+	chThdCreateStatic(timer_thread_wa, sizeof(timer_thread_wa), NORMALPRIO, timer_thread, NULL);
 
 	chThdCreateStatic(led_thread_wa, sizeof(led_thread_wa),
 	                   NORMALPRIO, led_thread, NULL);
 
 	for(;;) {
 		chThdSleepMilliseconds(10);
-/*
 		chThdSleepMilliseconds(2000);
 		ledpwm_set_intensity(LED_GREEN, 0.0);
 		chThdSleepMilliseconds(2000);
 		ledpwm_set_intensity(LED_GREEN, 1.0);
-		*/
 
 		if (encoder_is_configured()) {
 			//		comm_can_set_pos(0, encoder_read_deg());
