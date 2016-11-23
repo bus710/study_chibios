@@ -26,7 +26,8 @@
 #define APPCONF_APPCONF_EXAMPLE_PPM_H_
 
 // Override app configuration parameters such that the PPM app becomes default
-#define APPCONF_APP_TO_USE				APP_PPM
+//#define APPCONF_APP_TO_USE				APP_PPM
+#define APPCONF_APP_TO_USE				APP_UART
 #define APPCONF_PPM_CTRL_TYPE			PPM_CTRL_TYPE_CURRENT_NOREV_BRAKE
 
 #endif /* APPCONF_APPCONF_EXAMPLE_PPM_H_ */

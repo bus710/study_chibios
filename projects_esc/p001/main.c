@@ -44,6 +44,8 @@
 #include "servo_simple.h"
 #include "utils.h"
 
+static const uint8_t message[] = "aa";
+
 /*
  * Timers used:
  * TIM7: servo
@@ -168,6 +170,40 @@ static THD_FUNCTION(led_thread, arg) {
 	}
 }
 
+static void txend1(UARTDriver *uartp){
+  (void)uartp;
+}
+
+static void txend2(UARTDriver *uartp){
+  (void)uartp;
+}
+
+static void rxerr(UARTDriver *uartp, uartflags_t e){
+  (void)uartp;
+  (void)e;
+}
+
+static void rxchar(UARTDriver *uartp, uint16_t c){
+  (void)uartp;
+  (void)c;
+}
+
+static void rxend(UARTDriver *uartp){
+  (void)uartp;
+}
+
+static UARTConfig uart_cfg_1 = {
+  txend1,
+  txend2,
+  rxend,
+  rxchar,
+  rxerr,
+  19200,
+  0,
+  USART_CR2_LINEN,
+  0
+};
+
 int main(void) {
 	halInit();
 	chSysInit();
@@ -213,18 +249,23 @@ int main(void) {
 #endif
 
 	// Threads
-	chThdCreateStatic(periodic_thread_wa, sizeof(periodic_thread_wa), NORMALPRIO, periodic_thread, NULL);
-	chThdCreateStatic(timer_thread_wa, sizeof(timer_thread_wa), NORMALPRIO, timer_thread, NULL);
+	//chThdCreateStatic(periodic_thread_wa, sizeof(periodic_thread_wa), NORMALPRIO, periodic_thread, NULL);
+	//chThdCreateStatic(timer_thread_wa, sizeof(timer_thread_wa), NORMALPRIO, timer_thread, NULL);
 
-	chThdCreateStatic(led_thread_wa, sizeof(led_thread_wa),
-	                   NORMALPRIO, led_thread, NULL);
+	//chThdCreateStatic(led_thread_wa, sizeof(led_thread_wa), NORMALPRIO, led_thread, NULL);
+
+	palSetPadMode(GPIOC, 6, PAL_MODE_ALTERNATE(8));
+	palSetPadMode(GPIOC, 7, PAL_MODE_ALTERNATE(8));
+
+	uartStart(&UARTD6, &uart_cfg_1);
 
 	for(;;) {
-		chThdSleepMilliseconds(10);
-		chThdSleepMilliseconds(2000);
-		ledpwm_set_intensity(LED_GREEN, 0.0);
-		chThdSleepMilliseconds(2000);
-		ledpwm_set_intensity(LED_GREEN, 1.0);
+	    uartStartSend(&UARTD6, 2, message);
+		chThdSleepMilliseconds(500);
+		//chThdSleepMilliseconds(2000);
+		//ledpwm_set_intensity(LED_GREEN, 0.0);
+		//chThdSleepMilliseconds(2000);
+		//ledpwm_set_intensity(LED_GREEN, 1.0);
 
 		if (encoder_is_configured()) {
 			//		comm_can_set_pos(0, encoder_read_deg());
