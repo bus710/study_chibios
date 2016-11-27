@@ -47,10 +47,139 @@ static const uint8_t message[] = "aa";
  *
  */
 
-// Private variables
+static void pwmpcb(PWMDriver *pwmp) {
+
+  (void)pwmp;
+  //palClearPad(GPIOD, GPIOD_LED5);
+}
+
+static void pwmc1cb(PWMDriver *pwmp) {
+
+  (void)pwmp;
+  //palSetPad(GPIOD, GPIOD_LED5);
+}
+
+static PWMConfig pwmcfg = {
+  8000000,                           /* 2MHz PWM clock frequency.   */
+  40,                                /* Initial PWM period 0.000005S.       */
+  pwmpcb,
+  {
+   {PWM_OUTPUT_ACTIVE_HIGH, pwmc1cb},
+   {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+   {PWM_OUTPUT_ACTIVE_HIGH, NULL},
+   {PWM_OUTPUT_DISABLED, NULL}
+  },
+  0,
+  0
+};
 
 
 static THD_WORKING_AREA(led_thread_wa, 128);
+static THD_WORKING_AREA(pwm_thread_wa, 128);
+
+static void run(void){
+  int mdelay = 5;
+
+  for(int i=0; i<30; i++){
+    // step 1
+    palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(1));  //H1
+    palSetPadMode(GPIOA,  9, PAL_MODE_UNCONNECTED);   //H2
+    palSetPadMode(GPIOA,  8, PAL_MODE_UNCONNECTED);   //H3
+    palSetPadMode(GPIOB, 15, PAL_MODE_UNCONNECTED);   //L1
+    palSetPadMode(GPIOB, 14, PAL_MODE_ALTERNATE(1));  //L2
+    palSetPadMode(GPIOB, 13, PAL_MODE_UNCONNECTED);   //L3
+    chThdSleepMilliseconds(mdelay);
+
+    // step 6
+    palSetPadMode(GPIOA, 10, PAL_MODE_ALTERNATE(1));  //H1
+    palSetPadMode(GPIOA,  9, PAL_MODE_UNCONNECTED);   //H2
+    palSetPadMode(GPIOA,  8, PAL_MODE_UNCONNECTED);   //H3
+    palSetPadMode(GPIOB, 15, PAL_MODE_UNCONNECTED);   //L1
+    palSetPadMode(GPIOB, 14, PAL_MODE_UNCONNECTED);   //L2
+    palSetPadMode(GPIOB, 13, PAL_MODE_ALTERNATE(1));  //L3
+    chThdSleepMilliseconds(mdelay);
+
+    // step 5
+    palSetPadMode(GPIOA, 10, PAL_MODE_UNCONNECTED);   //H1
+    palSetPadMode(GPIOA,  9, PAL_MODE_ALTERNATE(1));  //H2
+    palSetPadMode(GPIOA,  8, PAL_MODE_UNCONNECTED);   //H3
+    palSetPadMode(GPIOB, 15, PAL_MODE_UNCONNECTED);   //L1
+    palSetPadMode(GPIOB, 14, PAL_MODE_UNCONNECTED);   //L2
+    palSetPadMode(GPIOB, 13, PAL_MODE_ALTERNATE(1));  //L3
+    chThdSleepMilliseconds(mdelay);
+
+    // step 4
+    palSetPadMode(GPIOA, 10, PAL_MODE_UNCONNECTED);   //H1
+    palSetPadMode(GPIOA,  9, PAL_MODE_ALTERNATE(1));  //H2
+    palSetPadMode(GPIOA,  8, PAL_MODE_UNCONNECTED);   //H3
+    palSetPadMode(GPIOB, 15, PAL_MODE_ALTERNATE(1));  //L1
+    palSetPadMode(GPIOB, 14, PAL_MODE_UNCONNECTED);   //L2
+    palSetPadMode(GPIOB, 13, PAL_MODE_UNCONNECTED);   //L3
+    chThdSleepMilliseconds(mdelay);
+
+    // step 3
+    palSetPadMode(GPIOA, 10, PAL_MODE_UNCONNECTED);   //H1
+    palSetPadMode(GPIOA,  9, PAL_MODE_UNCONNECTED);   //H2
+    palSetPadMode(GPIOA,  8, PAL_MODE_ALTERNATE(1));  //H3
+    palSetPadMode(GPIOB, 15, PAL_MODE_ALTERNATE(1));  //L1
+    palSetPadMode(GPIOB, 14, PAL_MODE_UNCONNECTED);   //L2
+    palSetPadMode(GPIOB, 13, PAL_MODE_UNCONNECTED);   //L3
+    chThdSleepMilliseconds(mdelay);
+
+    // step 2
+    palSetPadMode(GPIOA, 10, PAL_MODE_UNCONNECTED);   //H1
+    palSetPadMode(GPIOA,  9, PAL_MODE_UNCONNECTED);   //H2
+    palSetPadMode(GPIOA,  8, PAL_MODE_ALTERNATE(1));  //H3
+    palSetPadMode(GPIOB, 15, PAL_MODE_UNCONNECTED);   //L1
+    palSetPadMode(GPIOB, 14, PAL_MODE_ALTERNATE(1));  //L2
+    palSetPadMode(GPIOB, 13, PAL_MODE_UNCONNECTED);   //L3
+    chThdSleepMilliseconds(mdelay);
+  }
+
+  // stop
+  palSetPadMode(GPIOA, 10, PAL_MODE_UNCONNECTED);   //H1
+  palSetPadMode(GPIOA,  9, PAL_MODE_UNCONNECTED);   //H2
+  palSetPadMode(GPIOA,  8, PAL_MODE_UNCONNECTED);   //H3
+  palSetPadMode(GPIOB, 15, PAL_MODE_UNCONNECTED);   //L1
+  palSetPadMode(GPIOB, 14, PAL_MODE_UNCONNECTED);   //L2
+  palSetPadMode(GPIOB, 13, PAL_MODE_UNCONNECTED);   //L3
+  chThdSleepMilliseconds(50);
+}
+
+static THD_FUNCTION(pwm_thread, arg) {
+  (void) arg;
+
+  chRegSetThreadName("pwm_gen");
+
+  //DISABLE_GATE();
+  ENABLE_GATE();
+
+  pwmStart(&PWMD1, &pwmcfg);
+  pwmEnablePeriodicNotification(&PWMD1);
+
+  pwmEnableChannel(&PWMD1, 0, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 1000)); // 25%
+  pwmEnableChannel(&PWMD1, 1, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 1000)); // 25%
+  pwmEnableChannel(&PWMD1, 2, PWM_PERCENTAGE_TO_WIDTH(&PWMD1, 1000)); // 25%
+  //pwmEnableChannelNotification(&PWMD1, 0);
+
+  // stop
+  palSetPadMode(GPIOA, 10, PAL_MODE_UNCONNECTED);   //H1
+  palSetPadMode(GPIOA,  9, PAL_MODE_UNCONNECTED);   //H2
+  palSetPadMode(GPIOA,  8, PAL_MODE_UNCONNECTED);   //H3
+  palSetPadMode(GPIOB, 15, PAL_MODE_UNCONNECTED);   //L1
+  palSetPadMode(GPIOB, 14, PAL_MODE_UNCONNECTED);   //L2
+  palSetPadMode(GPIOB, 13, PAL_MODE_UNCONNECTED);   //L3
+  chThdSleepMilliseconds(50);
+
+  for(int i=0; i<10; i++){
+    run();
+    chThdSleepMilliseconds(300);
+  }
+
+  for(;;){
+
+  }
+}
 
 static THD_FUNCTION(led_thread, arg) {
 	(void)arg;
@@ -112,6 +241,7 @@ int main(void) {
 	LED_GREEN_OFF();
 
 	chThdCreateStatic(led_thread_wa, sizeof(led_thread_wa), NORMALPRIO, led_thread, NULL);
+	chThdCreateStatic(pwm_thread_wa, sizeof(pwm_thread_wa), NORMALPRIO, pwm_thread, NULL);
 
 	palSetPadMode(GPIOC, 6, PAL_MODE_ALTERNATE(8)); // UART TX
 	palSetPadMode(GPIOC, 7, PAL_MODE_ALTERNATE(8)); // UART RX
