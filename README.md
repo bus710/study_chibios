@@ -32,26 +32,20 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
   
 | 제목 | 바로가기 |
 | :---- | :---- |
-| 1. ChibiOS & ChibiStudio의 설치		| [>>>](README_10.md) |  
-| 2. 새 프로젝트의 생성       			| [>>>](README_20.md) |  
-| 3. 디버깅 하기				 		| [>>>](README_30.md) |  
+| 1. ChibiOS & ChibiStudio의 설치		| [>>>](md/README_10.md) |  
+| 2. 새 프로젝트의 생성       			| [>>>](md/README_20.md) |  
+| 3. 디버깅 하기				 		| [>>>](md/README_30.md) |  
 | 4. 기본편				          		| |  
-| - 4.1 main.c 살펴보기 				| [>>>](README_41.md) |  
-| - 4.2 GPIO			          		| [N/A](README_42.md) |  
-| - 4.3 USART			          		| [N/A](README_43.md) |  
-| - 4.4 Timer			          		| [N/A](README_44.md) |  
-| - 4.5 PWM				          		| [N/A](README_45.md) |  
-| - 4.6 SPI				          		| [N/A](README_46.md) |  
-| - 4.7 Thread 관리				        | [N/A](README_47.md) |  
+| - 4.1 main.c 살펴보기 				| [>>>](md/README_41.md) |  
+| - 4.2 GPIO			          		| [N/A](md/README_42.md) |  
+| - 4.3 USART			          		| [N/A](md/README_43.md) |  
+| - 4.4 Timer			          		| [N/A](md/README_44.md) |  
+| - 4.5 PWM				          		| [N/A](md/README_45.md) |  
+| - 4.6 SPI				          		| [N/A](md/README_46.md) |  
+| - 4.7 Thread 관리				        | [N/A](md/README_47.md) |  
 | 5. 응용편								| |  
-| - 5.1 Vedderb-OpenESC 분석하기     	| [>>>](README_51.md) |  
-| - 5.2	OpenESC 기반 LED 제어 			| [N/A](README_52.md) |  
-| - 5.3	OpenESC 기반 UART 제어 			| [N/A](README_53.md) |  
-| 6. 외부 시스템 연동		   			| |  
-| - 6.1 ROS와 연동하기    				| [N/A](README_60.md) |  
-| - 6.2 Unity3D와 연동하기	    		| [N/A](README_61.md) |  
-| 7. 다른 MCU로 포팅하기	    		| |  
-| - 7.1						    		| [N/A](README_70.md) |  
+| - 5.1 Vedderb-OpenESC 분석하기     	| [>>>](md/README_51.md) |  
+| - 5.2	OpenESC 기반 LED 제어 			| [N/A](md/README_52.md) |  
    
 ### Requirement - 준비물들  
   
