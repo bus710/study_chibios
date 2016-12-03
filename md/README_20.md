@@ -1,8 +1,8 @@
-[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#어떻게-무엇을-개발하고-공유할까)
   
-# study_chibios - starting a new project
+# study_chibios - 새 프로젝트 생성하기 
 
-### scratching from an existing project
+### 기존 프로젝트에서 새 프로젝트 만들어 내기
   
 포럼을 뒤져 보다가 충격적인(?) 사실을 알게 되었습니다. ChibiOS를 사용함에 있어서 "새 프로젝트 마법사" 같은 것은 없다는 것이죠. ChibiStudio를 쓰더라도 말입니다. 대신 Giovanni씨는 기존 프로젝트에서 스크래치를 통해 만드는 방법을 소개하고 있습니다. ([관련글](http://www.chibios.com/forum/viewtopic.php?t=2655#p21120))
   
@@ -31,7 +31,7 @@
 > It is done, you remove the code not needed (blinker thread, test code execution) the you have an empty project.  
   
   
-### In our case     
+### 우리의 경우     
    
 우리의 경우에는, ChibiOS가 STM32F407-Discovery를 완벽 지원하기 때문에, 1~2 단계를 따를 필요가 없습니다. 3단계 부터 살펴 보자면:  
 
@@ -52,10 +52,10 @@
   
 ![images/007.png](images/007.png)  
 
-### done!
+### 마치며
 
 이렇게 편집 된 프로젝트는 ChibiStudio (이클립스)에서 **import** 하고 컴파일 함으로써 설정이 제대로 된 것을 확인할 수 있습니다.
 (추가: 이후에 언급 되겠지만, vedder의 OpenESC 등을 비롯한 기존의 프로젝트를 이클립스로 불러오기 위해서는 import가 아닌 File >> New >> Existing Project의 메뉴를 이용해야 하며, 그 후의 다이얼로그에서 몇가지 옵션을 설정한 후에 이용할 수 있습니다. 자세한 것은 챕터 5에서 설명 하도록 하겠습니다.)
   
 
-[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#어떻게-무엇을-개발하고-공유할까)

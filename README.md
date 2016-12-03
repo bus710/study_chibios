@@ -1,4 +1,4 @@
-# study_chibios - preface
+# study_chibios - 서문
     
 This repo shares my experience in using ChibiOS for personal projects.  
 본 리포지토리는 ChibiOS를 개인 프로젝트를 적용하며 겪은 내용을 공유 하고자 합니다.  
@@ -12,7 +12,7 @@ Readers should be careful and take responsibility about results in following thi
 Also it won't be written in English for now.  
 또한 당분간은 영어가 아닌 한글로 내용을 작성하고자 합니다.  
   
-### Why - 왜 ChibiOS를 쓰게 되었나?  
+### 왜 ChibiOS를 쓰게 되었나?  
   
 ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 사용 가능한 RTOS 입니다.  
   
@@ -21,12 +21,12 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 물론 다른 좋은 RTOS가 있을 수 있습니다. 오픈소스와 상용 양 편에서. 그러나 저희 프로젝트가 요구하는 것을 최대한 빠르고 쉽게 진행 할 수 있다는 점에서 큰 반대 없이 적용하기로 결정이 되었습니다. 그렇기에 본 저장소에서 RTOS와 ChibiOS의 장단점은 논의하지 않을 것 입니다. 즉, OS를 평가하는 것은 논외의 영역임을 양해 부탁 드립니다.   
 결론적으로, ChibiOS는 기초적인 로봇 하드웨어를 제어함에 있어서 내부적으로는 효율적인 멀티 쓰레드와 API를 제공하고, 외부적으로는 다양한 신호의 입출력을 제공하므로, 채용하게 되었습니다.  
   
-### Who - 누구를 위하여?  
+### 누구를 위하여 작성 되었나?
   
 감히 독자가 생기리라고는 생각지 않습니다만, ChibiOS에 관심을 가지고 도전하고자 하는 분들이 헤매는 일 없이 작업을 진행하는데 도움이 되면 좋겠습니다. 대체로 엔지니어, 메이커, 학생분들이 읽어주시지 않을까 싶으며, 조금 더 특정하자면, baremetal 환경 펌웨어 또는 RTOS를 통해 하드웨어/로봇을 제어하고자 하는 분들을 대상으로 합니다. 특히 ARM의 M 제품군과 전자 회로에 대한 기본적인 이해가 있으시면 좋습니다. (저도 하수 입니다만...)    
 비판과 질문은 본 저장소의 issue에 남겨 주시면 최대한 응답하도록 하겠습니다.  
   
-### How/What - 어떻게 무엇을 개발하고 공유할까?  
+### 어떻게 무엇을 개발하고 공유할까?  
   
 일단은 ChibiOS를 입수하고, 컴파일 및 퓨징하는 것부터 시작하고자 합니다. 다음은 기본적인 입출력과 쓰레드를 사용하기 위한 API들을 살펴 본 후, 프로젝트와 관련된 내용을 통해 점차 수준을 높여가보고자 합니다. 프로젝트의 수준이 높아지면, 프로파일링과 함께 상위 소프트웨어와 연동하는 등의 과정도 진행하고자 합니다. 그와 관하여, 더 구체적인 내용은 아래 목차를 통해 살펴 볼 수 있습니다.  
   
@@ -43,11 +43,8 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 | - 4.5 PWM				          		| [N/A](md/README_45.md) |  
 | - 4.6 SPI				          		| [N/A](md/README_46.md) |  
 | - 4.7 Thread 관리				        | [N/A](md/README_47.md) |  
-| 5. 응용편								| |  
-| - 5.1 Vedderb-OpenESC 분석하기     	| [>>>](md/README_51.md) |  
-| - 5.2	OpenESC 기반 LED 제어 			| [N/A](md/README_52.md) |  
    
-### Requirement - 준비물들  
+### 준비물들  
   
 - 먼저 적절한 사양의 PC가 필요 합니다. 저는 윈도우즈 10을 사용하고 있습니다.   
 - ChibiOS는 ST의 마이크로 콘트롤러인 STM32 시리즈를 주요 타겟 MCU로 개발 되었습니다. 그렇기 때문에 STM32 시리즈에 속한 MCU와 관련 보드 들은 대체로 큰 문제 없이 사용 가능 할 것입니다. 본 과정에서는 그 중에서도 STM32F0-Discovery를 기본 과정에서, Vedder의 OpenESC를 응용 과정에서 사용하여 진행하고자 합니다. STM32F0-Discovery는 대략 $20 정도의 비교적 저렴한 가격에 마이크로 콘트롤러, 기본 주변 장치 (전원, 발진 회로, 입출력), 퓨징을 위한 stlink v2를 제공함으로써 빠르고 간편한 시작을 위한 환경을 제공 하기에 선정 되었고, OpenESC는 저희 프로젝트에 필요한 기능을 모두 포함하고 있기에 선정 되었습니다.   
@@ -55,13 +52,13 @@ ChibiOS는 ARM의 마이크로 콘트롤러 제품군인 M 시리즈 상에서 �
 - DC 파워 서플라이, 오실로 스코프, 테스터, 납땜 기구도 필요 합니다.  
 - 관련 소프트웨어는 추후에 다루도록 하겠습니다.  
   
-### Maintainer - 관리자  
+### 관리자  
 
 김성준  
 - 프로필: [bus710.net](http://bus710.net) 
 - 연락처: <<bus710@gmail.com>>  
   
-### References - 참고자료
+### 참고자료
   
 [1] http://www.chibios.org/dokuwiki/doku.php  
 [2] http://vedder.se/2015/01/vesc-open-source-esc/  

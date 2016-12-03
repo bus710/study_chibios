@@ -1,8 +1,8 @@
-[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#어떻게-무엇을-개발하고-공유할까)
 
-# study_chibios - understanding the basic structure.
+# study_chibios - 기본 구조 이해하기 
 
-### reading the example
+### 예제 읽어보기
    
 이제 프로젝트도 **import** 및 compile이 잘 되고 있으니 조금씩 코드를 분석해야할 차례일 것 입니다.   
 현재로써 제일 좋은 예제는 역시 import한 프로젝트에 속해 있는 [main.c](projects/RT-STM32F407-DISCOVERY-01/main.c) 일 것 입니다.  
@@ -71,7 +71,7 @@
 ```
   
   
-### anatomy of the example
+### 예제 분석하기 
   
 먼저 헤더파일들의 사용을 선언하는 include 블럭부터 보도록 하겠습니다.
 
@@ -150,8 +150,8 @@
 이 후는 수퍼루프 입니다. **"if (palReadPad(GPIOA, GPIOA_BUTTON))"**를 통해 GPIOA_BUTTON이 눌리면 **"TestThread(&SD2);"** 를 호출하여 UART 터미널에 OS의 현재 상태를 출력해 줍니다. 그 이후는 **"chThdSleepMilliseconds(500);"** 입니다. 0.5초간 해당 쓰레드를 잠 재우고 다른 쓰레드가 실행 될 수 있도록 커널에게 권한을 넘겨 줍니다. 
    
   
-### done!
+### 마치며
 
 자, 이제 해당 예제의 분석을 마쳤습니다. 최소한의 어플리케이션을 완성하기 위해 반드시 필요한 것이 어떤 것인지 어느 정도 감이 오시리라고 생각 합니다. 앞으로 다양한 장치와 API를 점차 추가해 나가면서 원하는 어플리케이션을 완성해 나갈 수 있을 것 같습니다. 
 
-[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#어떻게-무엇을-개발하고-공유할까)

@@ -1,8 +1,8 @@
-[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#어떻게-무엇을-개발하고-공유할까)
 
-# study_chibios - understanding Vedderb-OpenESC  
+# study_chibios - Vedderb-OpenESC의 이해 
    
-### background
+### 배경
   
 서문에서 적은 바와 같이 저희 팀이 지향하는 것은 ChibiOS를 이용하여 BLDC 모터를 제어하는 것 입니다. 이 프로젝트 자체가 Vedder Bejamin의 OpenESC 프로젝트에 영향을 많이 받았으므로 OpenESC를 분석함으로써 우리가 필요로 하는 기능을 구현하는 것은 자연스러운 일이라 할 것 입니다.   
 
@@ -20,7 +20,7 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
   
 ![images/200.png](images/200.png)  
   
-### downloading F/W
+### 펌웨어 다운로드
   
 저희가 현재 교재로 삼고 있는 커밋 버전은 **"1655c11"**이며 제 계정에 fork 해 놓은 상태 입니다 ([>>>](https://github.com/bus710/bldc)). 따라서 해당 저장소를 클론하여 폴더를 열어보면 약 70개에 가까운 파일들(폴더, 헤더, c코드, makefile...)이 있음을 알 수 있습니다. 일단은 이클립스에서 해당 프로젝트를 열어 컴파일을 해보도록 하겠습니다. 
   
@@ -34,7 +34,7 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
 
 다음으로는 여타 ChibiOS 프로젝트와 마찬가지로 컴파일(Project >> Build All (^B))을 수행 해주면, 정상적으로 컴파일 된 것을 확인할 수 있을 것 입니다.  
   
-### anatomy OpenESC  
+### OpenESC 분석하기   
   
 컴파일이 가능한 OpenESC 프로젝트를 입수하였으니, 이제 프로젝트의 구조를 파악 해야할 것 입니다.
   
@@ -101,7 +101,7 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
 | 44	| ws2811.c/h			| 외부 LED 제어용 저수준 모듈 |
 
 
-### code review  
+### 코드 읽기
   
 바로 위에서는 간략한 설명을 통해 어떤 기능을 구현하기 위해 어떤 파일들이 편집해야 하는지 알아 보았습니다. 이제는 main.c 부터 살펴 보며 전체 프로젝트가 어떤 구조로 이루어져 있는지 이해해야 할 것 입니다.
 
@@ -109,4 +109,4 @@ OpenESC에 대한 자세한 내용은 Vedder의 블로그인 [vedder.se](http://
      
   
     
-[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#어떻게-무엇을-개발하고-공유할까)
