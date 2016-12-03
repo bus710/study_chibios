@@ -241,7 +241,7 @@ int main(void) {
 	LED_GREEN_OFF();
 
 	chThdCreateStatic(led_thread_wa, sizeof(led_thread_wa), NORMALPRIO, led_thread, NULL);
-	chThdCreateStatic(pwm_thread_wa, sizeof(pwm_thread_wa), NORMALPRIO, pwm_thread, NULL);
+	//chThdCreateStatic(pwm_thread_wa, sizeof(pwm_thread_wa), NORMALPRIO, pwm_thread, NULL);
 
 	palSetPadMode(GPIOC, 6, PAL_MODE_ALTERNATE(8)); // UART TX
 	palSetPadMode(GPIOC, 7, PAL_MODE_ALTERNATE(8)); // UART RX
