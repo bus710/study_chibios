@@ -1,4 +1,4 @@
-[서문으로 돌아가기](README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
 
 # study_chibios - LED control
 
@@ -21,4 +21,4 @@ LED를 제어하기 위해서는 먼저 어느 출력 핀에 LED가 연결 되�
 ```
  
 
-[서문으로 돌아가기](README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
+[서문으로 돌아가기](../README.md#howwhat---어떻게-무엇을-개발하고-공유할까)
