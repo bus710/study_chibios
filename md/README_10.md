@@ -31,6 +31,7 @@ CbiboStudio를 다운 받은 후에도 다음과 같은 유틸리티들이 필�
 - [Vrapper](http://vrapper.sourceforge.net/home/) 개인적으로 vi navigation 스타일을 선호 합니다. 
 - [Eclipse Color Theme](https://marketplace.eclipse.org/content/eclipse-color-theme) 이클립스의 컬러 패키지 입니다. 개인적으로는 Windows Classic을 전체 색상으로 하고, minimal을 에디터의 색상으로 하는 것이 제일 좋았습니다.  
 - [Naver D2coding font](http://dev.naver.com/projects/d2coding) 네이버의 코딩용 폰트 입니다. 
+- [이클립스 HIDPI 설정](../eclipse.exe.manifest) 이클립스 Neon은 고해상도 모니터에서 아이콘의 크기를 제대로 출력하지 못하는 문제가 있습니다. 이를 위해 저 manifest 파일을 이클립스의 실행 파일이 있는 폴더 (C:/ChibiStudio/eclipse)에 저장한 후에 이클립스를 다시 실행하면, 아이콘의 크기가 정상적으로 출력 됩니다.   
 
 
 ### 설치 과정과 기본 사용방법
